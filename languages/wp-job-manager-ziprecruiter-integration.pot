@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Job Manager - ZipRecruiter Integration 1.0.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/wp-job-manager-"
-"ziprecruiter-integration\n"
-"POT-Creation-Date: 2015-04-07 23:23:41+00:00\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-job-manager-ziprecruiter-"
+"integration\n"
+"POT-Creation-Date: 2015-11-24 12:08:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,17 +18,17 @@ msgid "Load more job listings"
 msgstr ""
 
 #: includes/import-framework/templates/content-imported-job-listing.php:20
-msgid "Posted %s ago"
+msgid "%s ago"
 msgstr ""
 
-#: includes/updater/views/html-key-input.php:4
-msgid "Licence"
+#: includes/updater/views/html-key-input.php:5
+msgid "License"
 msgstr ""
 
-#: includes/updater/views/html-key-input.php:7
+#: includes/updater/views/html-key-input.php:8
 msgid ""
-"Enter your licence key and email and hit return. A valid key is required for "
-"automatic updates."
+"Enter your license key and email and hit return. A valid key is required for "
+"updates."
 msgstr ""
 
 #: includes/updater/views/html-key-notice.php:2
