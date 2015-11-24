@@ -77,7 +77,7 @@ class WP_Job_Manager_ZipRecruiter_Integration {
 						'name' 		=> 'job_manager_ziprecruiter_key',
 						'std' 		=> '',
 						'label' 	=> __( 'API Key', 'wp-job-manager-ziprecruiter-integration' ),
-						'desc'		=> sprintf( __( 'To show search results from ZipRecruiter you will need an API key. %sObtain this here%s.', 'wp-job-manager-ziprecruiter-integration' ), '<a href="https://docs.google.com/a/wpjobmanager.com/forms/d/1pryhdX1INYUhMEIx0pamF-_9dMEbX_39R0DNdDUL8fw/viewform">', '</a>' ),
+						'desc'		=> sprintf( __( 'To show search results from ZipRecruiter you will need an API key. %sObtain this here%s.', 'wp-job-manager-ziprecruiter-integration' ), '<a href="https://docs.google.com/a/a8c.com/forms/d/1pryhdX1INYUhMEIx0pamF-_9dMEbX_39R0DNdDUL8fw/viewform">', '</a>' ),
 						'type'      => 'input'
 					),
 					array(
