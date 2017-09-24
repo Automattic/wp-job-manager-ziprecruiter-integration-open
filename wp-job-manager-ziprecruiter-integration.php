@@ -1,27 +1,24 @@
 <?php
-/*
-Plugin Name: WP Job Manager - ZipRecruiter Integration
-Plugin URI: https://wpjobmanager.com/add-ons/ziprecruiter-integration/
-Description: Query and show results from ZipRecruiter using the ZipSearch API. Note: ZipRecruiter jobs will be displayed in list format linking offsite (without full descriptions).
-Version: 1.0.0
-Author: Mike Jolley
-Author URI: http://mikejolley.com
-Requires at least: 3.8
-Tested up to: 4.1
-
-	Copyright: 2015 Mike Jolley
-	License: GNU General Public License v3.0
-	License URI: http://www.gnu.org/licenses/gpl-3.0.html
-*/
+/**
+ * Plugin Name: WP Job Manager - ZipRecruiter Integration
+ * Plugin URI: https://wpjobmanager.com/add-ons/ziprecruiter-integration/
+ * Description: Query and show results from ZipRecruiter using the ZipSearch API. Note: ZipRecruiter jobs will be displayed in list format linking offsite (without full descriptions).
+ * Version: 1.0.0
+ * Author: Automattic
+ * Author URI: https://wpjobmanager.com
+ * Requires at least: 3.8
+ * Tested up to: 4.8
+ *
+ * WPJM-Product: wp-job-manager-ziprecruiter-integration
+ *
+ * Copyright: 2017 Automattic
+ * License: GNU General Public License v3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
-
-// Updater
-if ( ! class_exists( 'WPJM_Updater' ) ) {
-	include( 'includes/updater/class-wpjm-updater.php' );
 }
 
 // Import Framework
@@ -33,6 +30,7 @@ if ( ! class_exists( 'WP_Job_Manager_Importer_Integration' ) ) {
  * WP_Job_Manager_ZipRecruiter_Integration class.
  */
 class WP_Job_Manager_ZipRecruiter_Integration {
+	const JOB_MANAGER_CORE_MIN_VERSION = '1.29.0';
 
 	/**
 	 * Constructor
@@ -45,6 +43,7 @@ class WP_Job_Manager_ZipRecruiter_Integration {
 
 		// Add actions
 		add_action( 'init', array( $this, 'init' ), 12 );
+		add_action( 'admin_notices', array( $this, 'version_check' ) );
 		add_filter( 'job_manager_settings', array( $this, 'job_manager_settings' ) );
 		add_action( 'job_manager_imported_jobs_start', array( $this, 'add_attribution' ) );
 
@@ -60,6 +59,17 @@ class WP_Job_Manager_ZipRecruiter_Integration {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'wp-job-manager-ziprecruiter-integration' );
 		load_textdomain( 'wp-job-manager-ziprecruiter-integration', WP_LANG_DIR . "/wp-job-manager-ziprecruiter-integration/wp-job-manager-ziprecruiter-integration-$locale.mo" );
 		load_plugin_textdomain( 'wp-job-manager-ziprecruiter-integration', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
+
+	/**
+	 * Checks WPJM core version.
+	 */
+	public function version_check() {
+		if ( ! defined( 'JOB_MANAGER_VERSION' ) ) {
+			?><div class="error"><p><?php _e( '<em>WP Job Manager - ZipRecruiter Integration</em> requires WP Job Manager to be installed and activated.', 'wp-job-manager-ziprecruiter-integration' ); ?></p></div><?php
+		} elseif ( version_compare( JOB_MANAGER_VERSION, self::JOB_MANAGER_CORE_MIN_VERSION, '<' ) ) {
+			?><div class="error"><p><?php printf( __( '<em>WP Job Manager - ZipRecruiter Integration</em> requires WP Job Manager %s (you are using %s).', 'wp-job-manager-ziprecruiter-integration' ), self::JOB_MANAGER_CORE_MIN_VERSION, JOB_MANAGER_VERSION ); ?></p></div><?php
+		}
 	}
 
 	/**
@@ -152,5 +162,9 @@ class WP_Job_Manager_ZipRecruiter_Integration {
 	}
 }
 
+<<<<<<< HEAD
 $GLOBALS['job_listings_ziprecruiter_integration'] = new WP_Job_Manager_ZipRecruiter_Integration();
 new WPJM_Updater( __FILE__ );
+=======
+new WP_Job_Manager_ZipRecruiter_Integration();
+>>>>>>> Remove updater/license helper from plugin
