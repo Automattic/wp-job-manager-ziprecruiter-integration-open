@@ -152,5 +152,5 @@ class WP_Job_Manager_ZipRecruiter_Integration {
 	}
 }
 
-new WP_Job_Manager_ZipRecruiter_Integration();
+$GLOBALS['job_listings_ziprecruiter_integration'] = new WP_Job_Manager_ZipRecruiter_Integration();
 new WPJM_Updater( __FILE__ );
