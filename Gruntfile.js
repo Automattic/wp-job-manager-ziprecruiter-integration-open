@@ -1,16 +1,20 @@
 /* jshint node:true */
+
+const wpjmPluginSlug = 'wp-job-manager-ziprecruiter-integration';
+const wpjmPluginBuildPath = 'tmp/build';
+
 module.exports = function( grunt ){
 	'use strict';
 
 	grunt.initConfig({
-		pluginSlug: 'wp-job-manager-ziprecruiter-integration',
+		pluginSlug: wpjmPluginSlug,
 
 		// setting folder templates
 		dirs: {
 			css: 'assets/css',
 			images: 'assets/images',
 			js: 'assets/js',
-			build: 'tmp/build',
+			build: wpjmPluginBuildPath
 		},
 
 		// Compile all .less files.
@@ -173,9 +177,11 @@ module.exports = function( grunt ){
 
 		zip: {
 			'main': {
-				cwd: '<%= dirs.build %>/',
 				src: [ '<%= dirs.build %>/**' ],
-				dest: 'tmp/<%= pluginSlug %>.zip'
+				dest: 'tmp/<%= pluginSlug %>.zip',
+				router: function (filepath) {
+					return filepath.replace( wpjmPluginBuildPath, wpjmPluginSlug );
+				}
 			}
 		},
 
