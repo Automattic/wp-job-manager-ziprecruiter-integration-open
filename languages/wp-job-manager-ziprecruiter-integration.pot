@@ -1,17 +1,19 @@
-# Copyright (C) 2015 WP Job Manager - ZipRecruiter Integration
-# This file is distributed under the same license as the WP Job Manager - ZipRecruiter Integration package.
+# Copyright (C) 2017 Automattic
+# This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Job Manager - ZipRecruiter Integration 1.0.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-job-manager-ziprecruiter-"
+"Project-Id-Version: WP Job Manager - ZipRecruiter Integration 1.1.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/wp-job-manager-ziprecruiter-"
 "integration\n"
-"POT-Creation-Date: 2015-11-24 12:08:09+00:00\n"
+"POT-Creation-Date: 2017-10-13 13:38:04+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"X-Generator: grunt-wp-i18n1.0.0\n"
 
 #: includes/class-wp-job-manager-ziprecruiter-shortcode.php:85
 msgid "Load more job listings"
@@ -21,113 +23,104 @@ msgstr ""
 msgid "%s ago"
 msgstr ""
 
-#: includes/updater/views/html-key-input.php:5
-msgid "License"
-msgstr ""
-
-#: includes/updater/views/html-key-input.php:8
+#: wp-job-manager-ziprecruiter-integration.php:82
 msgid ""
-"Enter your license key and email and hit return. A valid key is required for "
-"updates."
+"<em>WP Job Manager - ZipRecruiter Integration</em> requires WP Job Manager "
+"to be installed and activated."
 msgstr ""
 
-#: includes/updater/views/html-key-notice.php:2
-msgid "Hide notice"
-msgstr ""
-
-#: includes/updater/views/html-ms-update.php:6
+#: wp-job-manager-ziprecruiter-integration.php:96
 msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class="
-"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
-"\">update now</a>."
+"<em>WP Job Manager - ZipRecruiter Integration</em> requires WP Job Manager "
+"%s (you are using %s)."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:72
+#: wp-job-manager-ziprecruiter-integration.php:118
 msgid "ZipRecruiter"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:79
+#: wp-job-manager-ziprecruiter-integration.php:125
 msgid "API Key"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:80
+#: wp-job-manager-ziprecruiter-integration.php:126
 msgid ""
 "To show search results from ZipRecruiter you will need an API key. %sObtain "
 "this here%s."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:86
+#: wp-job-manager-ziprecruiter-integration.php:132
 msgid "Backfilling (no results)"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:87
+#: wp-job-manager-ziprecruiter-integration.php:133
 msgid ""
-"If there are no <strong>local</strong> jobs found, backfill with X jobs from "
-"ZipRecruiter instead. Leave blank or set to 0 to disable."
+"If there are no <strong>local</strong> jobs found, backfill with X jobs "
+"from ZipRecruiter instead. Leave blank or set to 0 to disable."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:93
+#: wp-job-manager-ziprecruiter-integration.php:139
 msgid "Backfill before jobs"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:94
+#: wp-job-manager-ziprecruiter-integration.php:140
 msgid ""
 "Show a maximum of X jobs from ZipRecruiter above your local job listings. "
 "Leave blank or set to 0 to disable."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:100
+#: wp-job-manager-ziprecruiter-integration.php:146
 msgid "Backfill after jobs"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:101
+#: wp-job-manager-ziprecruiter-integration.php:147
 msgid ""
-"Show a maximum of X jobs from ZipRecruiter after the last page of your local "
-"job listings. Leave blank or set to 0 to disable."
+"Show a maximum of X jobs from ZipRecruiter after the last page of your "
+"local job listings. Leave blank or set to 0 to disable."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:107
+#: wp-job-manager-ziprecruiter-integration.php:153
 msgid "Backfill per page"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:108
+#: wp-job-manager-ziprecruiter-integration.php:154
 msgid ""
 "For each page of local jobs loaded, show a maximum of X jobs from "
 "ZipRecruiter. Leave blank or set to 0 to disable."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:114
+#: wp-job-manager-ziprecruiter-integration.php:160
 msgid "Default Keywords"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:115
+#: wp-job-manager-ziprecruiter-integration.php:161
 msgid ""
 "Enter keywords to search for by default. Surround multiple terms in quotes "
 "to treat them as a single phrase. These will be overridden when a user "
 "enters their own keywords."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:121
+#: wp-job-manager-ziprecruiter-integration.php:167
 msgid "Exclude Keywords"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:122
+#: wp-job-manager-ziprecruiter-integration.php:168
 msgid "Comma separate keywords and phrases to exclude from all searches."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:128
+#: wp-job-manager-ziprecruiter-integration.php:174
 msgid "Require Keywords"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:129
+#: wp-job-manager-ziprecruiter-integration.php:175
 msgid "Comma separate keywords and phrases to require for all searches."
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:135
+#: wp-job-manager-ziprecruiter-integration.php:181
 msgid "Default location"
 msgstr ""
 
-#: wp-job-manager-ziprecruiter-integration.php:136
+#: wp-job-manager-ziprecruiter-integration.php:182
 msgid ""
 "Enter a location to search for by default. This will be overridden when a "
 "user enters their own location."
@@ -149,9 +142,9 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Mike Jolley"
+msgid "Automattic"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://mikejolley.com"
+msgid "https://wpjobmanager.com"
 msgstr ""
