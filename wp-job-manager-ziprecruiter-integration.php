@@ -3,7 +3,7 @@
  * Plugin Name: WP Job Manager - ZipRecruiter Integration
  * Plugin URI: https://wpjobmanager.com/add-ons/ziprecruiter-integration/
  * Description: Query and show results from ZipRecruiter using the ZipSearch API. Note: ZipRecruiter jobs will be displayed in list format linking offsite (without full descriptions).
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Automattic
  * Author URI: https://wpjobmanager.com
  * Requires at least: 3.8
@@ -37,7 +37,7 @@ class WP_Job_Manager_ZipRecruiter_Integration {
 	 */
 	public function __construct() {
 		// Define constants
-		define( 'JOB_MANAGER_ZIPRECRUITER_VERSION', '1.0.0' );
+		define( 'JOB_MANAGER_ZIPRECRUITER_VERSION', '1.1.0' );
 		define( 'JOB_MANAGER_ZIPRECRUITER_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 		define( 'JOB_MANAGER_ZIPRECRUITER_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 
