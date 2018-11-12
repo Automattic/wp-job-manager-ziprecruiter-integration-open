@@ -9,7 +9,8 @@ Query and show results from ZipRecruiter using the ZipSearch API. Note: ZipRecru
 
 = Support Policy =
 
-For support, please visit [https://wpjobmanager.com/support/](https://wpjobmanager.com/support/).
+For support, please visit
+https://wpjobmanager.com/support/
 
 We will not offer support for:
 
@@ -21,7 +22,11 @@ If you need help with customisation you will need to find and hire a developer c
 
 == Installation ==
 
-To install this plugin, please refer to the guide here: [http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation)
+To install this plugin, please refer to the guide here: 
+http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation
+
+You can also refer to our support document here:
+https://wpjobmanager.com/document/ziprecruiter-integration/
 
 == Changelog ==
 
