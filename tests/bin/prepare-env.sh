@@ -25,11 +25,11 @@ for WPJM_SLUG in 'master' 'latest' 'previous'; do
 		git clone --depth=1 --branch master https://github.com/Automattic/WP-Job-Manager.git /tmp/wpjm-master
 		;;
 	latest)
-	    echo "Version: $(php ./$PLUGIN_BASE_DIR/tests/get-wpjm-version.php)"
-		git clone --depth=1 --branch `php ./$PLUGIN_BASE_DIR/tests/get-wpjm-version.php` https://github.com/Automattic/WP-Job-Manager.git /tmp/wpjm-latest
+	    echo "Version: $(php ./$PLUGIN_BASE_DIR/tests/bin/get-wpjm-version.php)"
+		git clone --depth=1 --branch `php ./$PLUGIN_BASE_DIR/tests/bin/get-wpjm-version.php` https://github.com/Automattic/WP-Job-Manager.git /tmp/wpjm-latest
 		;;
 	previous)
-		git clone --depth=1 --branch `php ./$PLUGIN_BASE_DIR/tests/get-wpjm-version.php --previous` https://github.com/Automattic/WP-Job-Manager.git /tmp/wpjm-previous
+		git clone --depth=1 --branch `php ./$PLUGIN_BASE_DIR/tests/bin/get-wpjm-version.php --previous` https://github.com/Automattic/WP-Job-Manager.git /tmp/wpjm-previous
 		;;
 	esac
 done
@@ -42,15 +42,19 @@ for WP_SLUG in 'master' 'latest' 'previous'; do
     rm -rf "/tmp/wordpress-$WP_SLUG"
 	case $WP_SLUG in
 	master)
-		git clone --depth=1 --branch master git://develop.git.wordpress.org/ /tmp/wordpress-master
+		git clone --depth=1 --branch master https://github.com/WordPress/wordpress-develop.git /tmp/wordpress-master
 		;;
 	latest)
-		git clone --depth=1 --branch `php ./$PLUGIN_BASE_DIR/tests/get-wp-version.php` git://develop.git.wordpress.org/ /tmp/wordpress-latest
+		git clone --depth=1 --branch `php ./$PLUGIN_BASE_DIR/tests/bin/get-wp-version.php` https://github.com/WordPress/wordpress-develop.git /tmp/wordpress-latest
 		;;
 	previous)
-		git clone --depth=1 --branch `php ./$PLUGIN_BASE_DIR/tests/get-wp-version.php --previous` git://develop.git.wordpress.org/ /tmp/wordpress-previous
+		git clone --depth=1 --branch `php ./$PLUGIN_BASE_DIR/tests/bin/get-wp-version.php --previous` https://github.com/WordPress/wordpress-develop.git /tmp/wordpress-previous
+		;;
+	*)
+		git clone --depth=1 --branch $WP_SLUG https://github.com/WordPress/wordpress-develop.git /tmp/wordpress-$WP_SLUG
 		;;
 	esac
+
 
 	cp -r $PLUGIN_BASE_DIR "/tmp/wordpress-$WP_SLUG/src/wp-content/plugins/$PLUGIN_SLUG"
 	cd /tmp/wordpress-$WP_SLUG
