@@ -14,7 +14,12 @@ mysql -u root -e "CREATE DATABASE wordpress_tests;"
 
 CURRENT_DIR=$(pwd)
 
-for WPJM_SLUG in 'master' 'latest' 'previous'; do
+WPJM_SLUGS=('master' 'latest' 'previous')
+if [ ! -z "$WPJM_VERSION" ]; then
+	WPJM_SLUGS=("$WPJM_VERSION")
+fi
+
+for WPJM_SLUG in "${WPJM_SLUGS[@]}"; do
 	echo "Preparing $WPJM_SLUG WPJM...";
 
 	cd $CURRENT_DIR/..
@@ -34,7 +39,13 @@ for WPJM_SLUG in 'master' 'latest' 'previous'; do
 	esac
 done
 
-for WP_SLUG in 'master' 'latest' 'previous'; do
+WP_SLUGS=('master' 'latest' 'previous')
+
+if [ ! -z "$WP_VERSION" ]; then
+	WP_SLUGS=("$WP_VERSION")
+fi
+
+for WP_SLUG in "${WP_SLUGS[@]}"; do
 	echo "Preparing $WP_SLUG WordPress...";
 
 	cd $CURRENT_DIR/..

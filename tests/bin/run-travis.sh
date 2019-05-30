@@ -18,25 +18,43 @@ run_phpunit_for() {
 }
 
 if [ "$WP_TRAVISCI" == "phpunit" ]; then
-    run_phpunit_for "latest" "master"
-    run_phpunit_for "latest" "latest"
-    run_phpunit_for "latest" "previous"
+	WPJM_SLUGS=('master' 'latest' 'previous')
+	WP_SLUGS=('master' 'latest' 'previous')
 
-    run_phpunit_for "master" "latest"
-    run_phpunit_for "previous" "latest"
+	if [ ! -z "$WP_VERSION" ]; then
+		WP_SLUGS=("$WP_VERSION")
+	fi
+
+	if [ ! -z "$WPJM_VERSION" ]; then
+		WPJM_SLUGS=("$WPJM_VERSION")
+	fi
+
+	for WPJM_SLUG in "${WPJM_SLUGS[@]}"; do
+		for WP_SLUG in "${WP_SLUGS[@]}"; do
+			run_phpunit_for "$WP_SLUG" "$WPJM_SLUG"
+		done
+	done
+elif [ "$WP_TRAVISCI" == "phpcs" ]; then
+	composer install
+
+	echo "Testing PHP code formatting..."
+
+	bash ./tests/bin/phpcs.sh
+
+	if [ $? -ne 0 ]; then
+		exit 1
+	fi
 else
 
-    gem install less
-    rm -rf ~/.yarn
-    curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.20.3
-    yarn
+	npm install npm -g
+	npm install
 
-    if $WP_TRAVISCI; then
+		if $WP_TRAVISCI; then
 	# Everything is fine
 	:
-    else
-        exit 1
-    fi
+		else
+				exit 1
+		fi
 fi
 
 exit 0
