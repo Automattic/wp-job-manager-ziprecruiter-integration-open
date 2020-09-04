@@ -56,6 +56,7 @@ class WP_Job_Manager_ZipRecruiter_Integration {
 		}
 
 		add_filter( 'job_manager_settings', array( $this, 'job_manager_settings' ) );
+		add_filter( 'job_manager_shortcodes', array( $this, 'add_wpjm_shortcode' ) );
 		add_action( 'job_manager_imported_jobs_start', array( $this, 'add_attribution' ) );
 
 		include_once( 'includes/class-wp-job-manager-ziprecruiter-import.php' );
@@ -186,6 +187,21 @@ class WP_Job_Manager_ZipRecruiter_Integration {
 			)
 		);
 		return $settings;
+	}
+
+	/**
+	 * Add shortcode to WP Job Manager's shortcode list.
+	 *
+	 * @param string[] $shortcodes Current WPJM shortcodes
+	 *
+	 * @return string[] WPJM shortcodes with ZipRecruiter added.
+	 */
+	public function add_wpjm_shortcode( $shortcodes ) {
+		if ( ! in_array( 'ziprecruiter_jobs', $shortcodes, true ) ) {
+			$shortcodes[] = 'ziprecruiter_jobs';
+		}
+
+		return $shortcodes;
 	}
 
 	/**
